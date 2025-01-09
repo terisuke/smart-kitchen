@@ -32,7 +32,7 @@ export function IngredientInput({ onAdd }: IngredientInputProps) {
     >
       <Input
         type="text"
-        placeholder="Enter an ingredient..."
+        placeholder="材料を追加！(卵とか米とか)"
         required
         value={inputValue || ""}
         onChange={handleChange}

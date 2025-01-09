@@ -40,7 +40,15 @@ export default function SmartKitchenAdvisor() {
       setAnalysis({
         loading: false,
         flavor: result.flavor,
-        suggestions: result.suggestions
+        suggestions: result.suggestions,
+        recipes: result.recipes  // レシピ情報を追加
+      });
+      
+      console.log('Setting analysis state:', {
+        loading: false,
+        flavor: result.flavor,
+        suggestions: result.suggestions,
+        recipes: result.recipes
       });
     } catch (error) {
       console.error('Analysis failed:', error);
@@ -52,8 +60,8 @@ export default function SmartKitchenAdvisor() {
     <div class="max-w-2xl mx-auto p-4 space-y-6">
       <Card>
         <CardHeader>
-          <h1 class="text-2xl font-bold">Smart Kitchen Advisor</h1>
-          <p class="text-gray-600 mt-1">Add ingredients to get cooking suggestions</p>
+          <h1 class="text-2xl font-bold">スマートキッチンハッカー</h1>
+          <p class="text-gray-600 mt-1">お前の食生活をAIがハックする！</p>
         </CardHeader>
         <CardBody>
           <div class="space-y-6">
@@ -71,7 +79,7 @@ export default function SmartKitchenAdvisor() {
                   disabled={ingredients.length === 0}
                   className="w-full"
                 >
-                  Analyze Ingredients
+                  料理を提案!
                 </Button>
               </div>
             )}
